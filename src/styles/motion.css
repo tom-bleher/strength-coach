@@ -1,0 +1,97 @@
+/* ── Reveal (IntersectionObserver fallback) ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--motion-distance-reveal));
+  transition:
+    opacity var(--motion-duration-reveal) var(--ease-reveal),
+    transform var(--motion-duration-reveal) var(--ease-reveal);
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+.stagger > :nth-child(1)  { transition-delay: 0s; }
+.stagger > :nth-child(2)  { transition-delay: calc(var(--motion-stagger-step) * 1); }
+.stagger > :nth-child(3)  { transition-delay: calc(var(--motion-stagger-step) * 2); }
+.stagger > :nth-child(4)  { transition-delay: calc(var(--motion-stagger-step) * 3); }
+.stagger > :nth-child(5)  { transition-delay: calc(var(--motion-stagger-step) * 4); }
+.stagger > :nth-child(6)  { transition-delay: calc(var(--motion-stagger-step) * 5); }
+.stagger > :nth-child(7)  { transition-delay: calc(var(--motion-stagger-step) * 6); }
+.stagger > :nth-child(8)  { transition-delay: calc(var(--motion-stagger-step) * 7); }
+.stagger > :nth-child(9)  { transition-delay: calc(var(--motion-stagger-step) * 8); }
+.stagger > :nth-child(10) { transition-delay: calc(var(--motion-stagger-step) * 9); }
+
+/* ── Scroll-driven reveal (progressive enhancement) ── */
+@supports (animation-timeline: view()) {
+  @keyframes reveal-up {
+    from { opacity: 0; transform: translateY(var(--motion-distance-reveal)); }
+    to   { opacity: 1; transform: none; }
+  }
+  .reveal {
+    opacity: 1; transform: none; transition: none;
+    animation: reveal-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+  .reveal.visible { animation: none; opacity: 1; transform: none; }
+  .stagger > :nth-child(1) { animation-range: entry 0% entry 35%; transition-delay: 0s; }
+  .stagger > :nth-child(2) { animation-range: entry 3% entry 38%; transition-delay: 0s; }
+  .stagger > :nth-child(3) { animation-range: entry 6% entry 41%; transition-delay: 0s; }
+  .stagger > :nth-child(4) { animation-range: entry 9% entry 44%; transition-delay: 0s; }
+  .stagger > :nth-child(5) { animation-range: entry 12% entry 47%; transition-delay: 0s; }
+  .stagger > :nth-child(6) { animation-range: entry 15% entry 50%; transition-delay: 0s; }
+  .stagger > :nth-child(7) { animation-range: entry 18% entry 53%; transition-delay: 0s; }
+  .stagger > :nth-child(8) { animation-range: entry 21% entry 56%; transition-delay: 0s; }
+  .stagger > :nth-child(9) { animation-range: entry 24% entry 59%; transition-delay: 0s; }
+  .stagger > :nth-child(10) { animation-range: entry 27% entry 62%; transition-delay: 0s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal,
+  .hero .content,
+  .hero .photo-col {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+  }
+  .quotes-caption span,
+  .quotes-overlay,
+  .quotes-overlay .play-icon,
+  .gallery .item,
+  .gallery .item img,
+  .programs .row,
+  .programs .num,
+  .social-proof .logo,
+  .hero .cta,
+  .hero .badge-link,
+  .hero .ghost,
+  .contact .field,
+  .contact .ta,
+  .contact .submit,
+  .footer .phone,
+  .footer .social,
+  .quotes-tab,
+  .quotes-screen {
+    transition: none !important;
+  }
+  :is(.hero .cta, .contact .submit, .quotes-tab, .footer .social, .social-proof .logo, .hero .badge-link, .quotes-screen):is(:hover, :focus-visible) {
+    transform: none;
+  }
+  .gallery .item:hover,
+  .programs .row:hover .num {
+    transform: none;
+    box-shadow: none;
+  }
+  .gallery .item:hover img,
+  .quotes-screen:hover .quotes-overlay .play-icon,
+  .quotes-screen:focus-visible .quotes-overlay .play-icon,
+  .quotes-screen:focus-within .quotes-overlay .play-icon {
+    transform: none;
+  }
+  .quotes-caption span,
+  .quotes-overlay {
+    transform: none;
+  }
+}
+
+

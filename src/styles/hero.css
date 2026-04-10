@@ -1,0 +1,143 @@
+/* ════════════ Hero ════════════ */
+
+.hero {
+  --hero-unit: clamp(12px, 0.85vw + 5px, 18px);
+  background: var(--ink);
+  color: #fff;
+  overflow: hidden;
+  min-height: clamp(720px, 100svh, 920px);
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  background:
+    radial-gradient(circle at 15% 18%, rgba(13, 148, 136, 0.16), transparent 32%),
+    linear-gradient(135deg, #0f1720 0%, #10232d 100%);
+
+  &::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 80%, rgba(13, 148, 136, 0.08), transparent),
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(13, 148, 136, 0.05), transparent);
+  }
+  &::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background-image: var(--grain); background-size: 200px; opacity: 0.5;
+  }
+
+  .grid {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(340px, 35vw); gap: clamp(24px, 4vw, 56px);
+    position: relative; z-index: 1; align-items: stretch;
+    min-height: inherit;
+    padding-top: clamp(20px, 3vw, 36px);
+    transform: translateX(clamp(28px, 4.75vw, 68px));
+    @media (max-width: 880px) { grid-template-columns: 1fr; gap: 24px; min-height: auto; padding: 32px 0 0; transform: none; }
+  }
+  .copy-col {
+    --copy-width: min(100%, calc(var(--hero-unit) * 25));
+    display: grid; grid-template-rows: minmax(calc(var(--hero-unit) * 8), 1fr) auto;
+    min-width: 0;
+    padding-inline-start: clamp(20px, 5vw, 72px);
+    padding-bottom: clamp(40px, 6vw, 72px);
+    @media (max-width: 880px) { grid-template-rows: auto auto; gap: 18px; padding: 0 0 8px; }
+  }
+  .content {
+    align-self: end; justify-self: start;
+    width: var(--copy-width);
+    padding: 0; min-width: 0;
+    display: grid; gap: calc(var(--hero-unit) * 0.95);
+    opacity: 1; transform: none;
+    transition:
+      opacity var(--motion-duration-reveal) var(--ease-reveal),
+      transform var(--motion-duration-reveal) var(--ease-reveal);
+    @starting-style { opacity: 0; transform: translateY(var(--motion-distance-reveal)); }
+    @media (max-width: 880px) { width: min(100%, 34rem); max-width: none; justify-self: stretch; gap: 14px; }
+  }
+  .badge-link {
+    display: inline-flex; align-items: center; justify-content: center;
+    align-self: center; justify-self: start;
+    width: var(--copy-width);
+    transition:
+      transform var(--motion-duration-base) var(--ease),
+      opacity var(--motion-duration-fast) var(--ease);
+    &:hover,
+    &:focus-visible {
+      opacity: 0.82;
+      transform: translateY(calc(var(--motion-distance-lift) * -1));
+    }
+    @media (max-width: 880px) { width: auto; justify-self: start; }
+  }
+  .badge { height: clamp(92px, calc(var(--hero-unit) * 7.1), 136px); width: auto; }
+  .title {
+    font-family: var(--font-display); font-size: clamp(2.3rem, calc(var(--hero-unit) * 3.15), 4.15rem); font-weight: 400;
+    line-height: 1.06; letter-spacing: -0.03em; margin-bottom: 0; max-width: 11ch;
+    @media (max-width: 620px) { font-size: clamp(2rem, 10.5vw, 3rem); }
+  }
+  .light { display: block; font-family: var(--font); font-weight: 600; font-size: 0.74em; color: rgba(255, 255, 255, 0.54); }
+  .sub { font-size: clamp(1rem, calc(var(--hero-unit) * 0.98), 1.2rem); line-height: 1.85; color: rgba(255, 255, 255, 0.72); max-width: none; margin-bottom: 0; }
+  .promise { font-size: clamp(1rem, calc(var(--hero-unit) * 1.02), 1.22rem); font-weight: 600; line-height: 1.75; color: rgba(255, 255, 255, 0.92); margin-bottom: 0; max-width: none; }
+  .actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: calc(var(--hero-unit) * 0.25); }
+  .cta {
+    display: inline-flex; align-items: center; justify-content: center; height: calc(var(--hero-unit) * 2.7); padding: 0 calc(var(--hero-unit) * 1.5);
+    border-radius: 999px; background: var(--teal); color: #fff; font-weight: 600; font-size: clamp(0.9rem, calc(var(--hero-unit) * 0.78), 1rem);
+    transition:
+      transform var(--motion-duration-base) var(--ease),
+      background-color var(--motion-duration-base) var(--ease),
+      box-shadow var(--motion-duration-base) var(--ease);
+    box-shadow: 0 0 0 0 var(--teal-glow);
+    &:hover,
+    &:focus-visible {
+      background: var(--teal-hover);
+      box-shadow: 0 10px 28px var(--teal-glow);
+      transform: translateY(calc(var(--motion-distance-lift) * -1));
+    }
+  }
+  .ghost {
+    font-size: clamp(0.88rem, calc(var(--hero-unit) * 0.76), 0.98rem);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.62);
+    transition:
+      color var(--motion-duration-fast) var(--ease),
+      opacity var(--motion-duration-fast) var(--ease);
+    &:hover,
+    &:focus-visible {
+      color: rgba(255, 255, 255, 0.86);
+      opacity: 0.84;
+    }
+  }
+  .photo-col {
+    display: flex; align-items: flex-end; justify-content: center; min-width: 0;
+    align-self: stretch;
+    opacity: 1; transform: none;
+    transition:
+      opacity var(--motion-duration-reveal) var(--ease-reveal) var(--motion-delay-intro),
+      transform var(--motion-duration-reveal) var(--ease-reveal) var(--motion-delay-intro);
+    @starting-style {
+      opacity: 0;
+      transform: translateY(calc(var(--motion-distance-reveal) * 0.5));
+    }
+    @media (max-width: 880px) { max-width: min(440px, 100%); margin-inline: auto; align-self: auto; }
+  }
+  .photo-shell {
+    position: relative; width: 100%; height: 100%;
+    display: flex; align-items: flex-end; justify-content: center;
+  }
+  .photo-col img {
+    width: clamp(540px, 52vw, 760px); height: auto; max-width: none; margin-inline: auto; position: relative; z-index: 1;
+    transform: translateX(6%);
+    @media (max-width: 1120px) { width: clamp(460px, 50vw, 660px); }
+    @media (max-width: 880px) { width: auto; max-width: 100%; max-height: 400px; transform: none; }
+    @media (max-width: 620px) { height: auto; max-width: 100%; max-height: 300px; }
+  }
+
+  @media (max-width: 880px) {
+    min-height: auto;
+  }
+
+  @media (max-width: 620px) {
+    .badge-link { margin-bottom: 0; }
+    .actions { align-items: stretch; }
+    .cta { width: 100%; }
+  }
+}
+
+

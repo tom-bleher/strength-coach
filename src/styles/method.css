@@ -1,0 +1,44 @@
+/* ════════════ Method ════════════ */
+
+.method {
+  padding-top: var(--section-gap); background: var(--bg);
+
+  .steps {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 4vw, 40px); position: relative; padding-bottom: 72px;
+    width: min(100%, var(--section-body)); margin-inline: auto;
+    @media (max-width: 960px) { grid-template-columns: 1fr; gap: 32px; }
+  }
+  .line {
+    position: absolute; top: 22px; left: 12%; right: 12%; height: 1px; background: var(--border);
+    @media (max-width: 960px) { display: none; }
+  }
+  .step { position: relative; }
+  .num {
+    display: flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; border-radius: 50%; background: var(--ink); color: #fff;
+    font-weight: 700; font-size: 0.85rem; margin-bottom: 20px;
+    position: relative; z-index: 1; box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--border);
+  }
+  .step h3 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
+  .step p {
+    font-size: 0.9rem; line-height: 1.8; color: var(--text-2); max-width: 280px;
+    @media (max-width: 960px) { max-width: none; }
+  }
+  .results-band {
+    background: var(--ink); color: #fff; padding: 48px 0; position: relative;
+    &::after { content: ""; position: absolute; inset: 0; background-image: var(--grain); background-size: 200px; pointer-events: none; opacity: 0.5; }
+  }
+  .results-heading { font-size: clamp(1.2rem, 2.2vw, 1.5rem); font-weight: 700; margin-bottom: 28px; color: #fff; line-height: 1.3; position: relative; z-index: 1; }
+  .results-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px 48px; position: relative; z-index: 1;
+    @media (max-width: 960px) { grid-template-columns: 1fr; }
+  }
+  .result { display: flex; gap: 12px; align-items: flex-start; color: rgba(255, 255, 255, 0.6); font-size: 0.88rem; line-height: 1.7; }
+  .chk {
+    width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid rgba(13, 148, 136, 0.4);
+    flex-shrink: 0; margin-top: 3px; position: relative;
+    &::after { content: ""; position: absolute; top: 4px; left: 4px; width: 7px; height: 4px; border-left: 1.5px solid var(--teal); border-bottom: 1.5px solid var(--teal); transform: rotate(-45deg); }
+  }
+}
+
+

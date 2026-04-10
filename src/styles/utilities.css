@@ -1,0 +1,30 @@
+/* ── Utilities ── */
+.wrap { width: min(1180px, calc(100% - var(--wrap-pad) * 2)); margin-inline: auto; }
+.wrap-narrow { width: min(780px, calc(100% - var(--wrap-pad) * 2)); margin-inline: auto; }
+.section-shell { width: min(var(--section-shell), calc(100% - var(--wrap-pad) * 2)); margin-inline: auto; }
+.section-intro { max-width: var(--section-intro-width); margin-bottom: clamp(28px, 4vw, 48px); }
+.section-intro .section-title { max-width: 15ch; margin-bottom: 0; }
+
+.eyebrow {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--teal);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin-top: 14px;
+}
+
+:is(.hero .cta, .contact .submit, .quotes-tab, .footer .social, .social-proof .logo, .hero .badge-link, .quotes-screen):focus-visible {
+  outline: 2px solid rgba(13, 148, 136, 0.8);
+  outline-offset: 4px;
+}
+

@@ -1,0 +1,38 @@
+/* ── Tokens ── */
+:root {
+  --font: 'Noto Sans Hebrew', sans-serif;
+  --font-display: 'Suez One', 'Noto Sans Hebrew', serif;
+  --ink: #0f1720;
+  --teal: #0d9488;
+  --teal-hover: #0f766e;
+  --teal-glow: rgba(13, 148, 136, 0.25);
+  --bg: #f9f8f6;
+  --surface: #fff;
+  --surface-soft: #fcfbf8;
+  --text: #1a1d24;
+  --text-2: #525866;
+  --text-3: #8b919e;
+  --border: #e2e0dc;
+  --border-light: #f0efec;
+  --section-gap: clamp(80px, 10vw, 128px);
+  --section-shell: 1060px;
+  --section-body: 960px;
+  --section-intro-width: 560px;
+  --section-grid-gap: clamp(28px, 4vw, 48px);
+  --wrap-pad: clamp(20px, 4vw, 40px);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-reveal: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --motion-duration-fast: 180ms;
+  --motion-duration-base: 280ms;
+  --motion-duration-slow: 520ms;
+  --motion-duration-reveal: 860ms;
+  --motion-delay-intro: 160ms;
+  --motion-stagger-step: 80ms;
+  --motion-distance-reveal: 40px;
+  --motion-distance-lift: 4px;
+  --motion-distance-overlay: 8px;
+  --motion-scale-media: 1.04;
+  --shadow-soft: 0 22px 48px rgba(15, 23, 32, 0.09);
+  --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+

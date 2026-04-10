@@ -1,0 +1,42 @@
+/* ════════════ Programs ════════════ */
+
+.programs {
+  padding: var(--section-gap) 0; background: var(--bg);
+
+  .list {
+    display: grid; grid-template-columns: 1fr; gap: 0;
+    width: min(100%, var(--section-body)); margin-inline: auto;
+  }
+  .row {
+    display: grid; grid-template-columns: 1fr; gap: 18px; align-items: start;
+    padding: 28px; border-bottom: 1px solid var(--border);
+    transition:
+      opacity var(--motion-duration-reveal) var(--ease-reveal),
+      transform var(--motion-duration-reveal) var(--ease-reveal),
+      background-color var(--motion-duration-base) var(--ease),
+      border-color var(--motion-duration-base) var(--ease);
+    &:last-child { border-bottom: none; }
+    &:hover {
+      background: rgba(13, 148, 136, 0.02);
+      .num {
+        background: rgba(13, 148, 136, 0.12);
+        transform: translateY(calc(var(--motion-distance-lift) * -1));
+      }
+    }
+  }
+  .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 42px; height: 42px; border-radius: 50%;
+    font-size: 0.9rem; font-weight: 800; color: var(--teal);
+    background: rgba(13, 148, 136, 0.08); letter-spacing: -0.03em; line-height: 1;
+    transition:
+      transform var(--motion-duration-base) var(--ease),
+      color var(--motion-duration-fast) var(--ease),
+      background-color var(--motion-duration-base) var(--ease);
+  }
+  .tag { font-size: 0.62rem; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+  .row h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.3; }
+  .row p { font-size: 0.88rem; color: var(--text-2); line-height: 1.8; max-width: none; }
+}
+
+

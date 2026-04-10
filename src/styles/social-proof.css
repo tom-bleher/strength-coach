@@ -1,0 +1,68 @@
+/* ════════════ Social Proof ════════════ */
+
+.social-proof {
+  padding: 48px 0; background: var(--surface); border-bottom: 1px solid var(--border-light);
+
+  .label { font-size: 1.1rem; font-weight: 700; color: var(--text); text-align: center; margin-bottom: 32px; }
+  .row {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 14px clamp(10px, 1.8vw, 22px);
+    padding-inline: clamp(18px, 4vw, 48px);
+
+    @media (max-width: 1180px) { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    @media (max-width: 820px) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    @media (max-width: 620px) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  .logo {
+    --logo-width: 92%;
+    --logo-height: 50px;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 92px; padding: 18px 20px;
+    transition:
+      transform var(--motion-duration-base) var(--ease),
+      filter var(--motion-duration-base) var(--ease),
+      opacity var(--motion-duration-fast) var(--ease);
+    filter: none;
+    &:hover,
+    &:focus-visible {
+      transform: translateY(calc(var(--motion-distance-lift) * -1));
+    }
+
+    & img {
+      width: auto;
+      max-width: var(--logo-width);
+      max-height: var(--logo-height);
+      object-fit: contain;
+      object-position: center;
+    }
+
+    @media (max-width: 820px) {
+      min-height: 82px;
+      padding: 16px 14px;
+    }
+
+    @media (max-width: 620px) {
+      min-height: 72px;
+      --logo-height: 38px;
+    }
+  }
+
+  .logo--monday { --logo-width: 100%; --logo-height: 28px; }
+  .logo--wix { --logo-width: 78%; --logo-height: 40px; }
+  .logo--overwolf { --logo-width: 60%; --logo-height: 54px; }
+  .logo--payoneer { --logo-width: 70%; --logo-height: 32px; }
+  .logo--checkmarx { --logo-width: 96%; --logo-height: 34px; }
+  .logo--assuta { --logo-width: 94%; --logo-height: 34px; }
+  .logo--zim { --logo-width: 60%; --logo-height: 54px; }
+  .logo--zell { --logo-width: 88%; --logo-height: 42px; }
+  .logo--lahav { --logo-width: 68%; --logo-height: 56px; }
+  .logo--cargal { --logo-width: 72%; --logo-height: 50px; }
+  .logo--idf { --logo-width: 60%; --logo-height: 54px; }
+  .logo--mabal { --logo-width: 76%; --logo-height: 46px; }
+  .logo--starttau { --logo-width: 92%; --logo-height: 40px; }
+  .logo--hafuch { --logo-width: 60%; --logo-height: 50px; }
+}
+
+
