@@ -230,7 +230,7 @@
       </div>
       <div class="quotes-player reveal">
         <div class="quotes-screen" tabindex="0">
-          <video id="quote-video" src="/quote-definition.mp4" autoplay loop muted playsinline preload="auto"></video>
+          <video id="quote-video" autoplay loop muted playsinline preload="auto"></video>
           <div class="quotes-caption" id="quote-caption"></div>
           <a href="https://www.youtube.com/watch?v=x66nnmUgOJc" target="_blank" rel="noopener noreferrer" class="quotes-overlay" aria-label="לצפייה בפרק המלא ביוטיוב">
             <span class="play-icon">&#9654;</span>
@@ -238,9 +238,86 @@
           </a>
         </div>
         <div class="quotes-tabs" role="tablist">
-          <button class="quotes-tab active" data-clip="0" role="tab" aria-selected="true">מהי חוזקה?</button>
-          <button class="quotes-tab" data-clip="1" role="tab" aria-selected="false">פילטרים שונים</button>
-          <button class="quotes-tab" data-clip="2" role="tab" aria-selected="false">הקסם הצוותי</button>
+          <button class="quotes-tab active" data-src="quote-definition.mp4" role="tab" aria-selected="true">
+            <script type="application/json">
+              [
+                [0.20,  4.00, "גלופ מחפשת תבניות של רגש, מחשבה או פעולה"],
+                [4.00,  5.80, "שיש להן היבט פרודוקטיבי"],
+                [6.20,  7.20, "זאת ההגדרה"],
+                [7.90, 12.00, "שוב — תבנית של רגש, מחשבה או פעולה"],
+                [12.50, 13.80, "שיש לה היבט פרודוקטיבי"],
+                [13.96, 15.90, "הגדרה של חוזקה מבחינת גלופ —"],
+                [16.40, 19.20, "ביצוע קרוב למושלם, לאורך זמן"]
+              ]
+            </script>
+            מהי חוזקה?
+          </button>
+          <button class="quotes-tab" data-src="quote-filters.mp4" role="tab" aria-selected="false">
+            <script type="application/json">
+              [
+                [0.20,  1.80, "רוב האנשים חושבים"],
+                [1.84,  7.04, "שהפילטר שלהם על העולם דומה לפילטר של אנשים אחרים"],
+                [7.24,  9.20, "ואני אטען —"],
+                [9.54, 11.60, "הפילטרים שלנו שונים"],
+                [12.00, 14.80, "חוזקות נותן לנו שפה לדבר על זה"]
+              ]
+            </script>
+            פילטרים שונים
+          </button>
+          <button class="quotes-tab" data-src="quote-magic.mp4" role="tab" aria-selected="false">
+            <script type="application/json">
+              [
+                [0.20,  2.50, "הקסם הוא כשאנחנו יושבים בצוות"],
+                [3.20,  8.40, "ופתאום אנשים שומעים משהו שהם הרגישו באופן אינטואיטיבי"],
+                [10.20, 13.00, "פתאום מישהו נתן מילים מדויקות לתאר אותם"],
+                [13.50, 14.80, "יש בזה ערך אדיר"]
+              ]
+            </script>
+            הקסם הצוותי
+          </button>
+          <button class="quotes-tab" data-src="quote-developer.mp4" role="tab" aria-selected="false">
+            <script type="application/json">
+              [
+                [0.05,  4.30, "יש חוזקה שהדימוי שלה"],
+                [4.30,  5.80, "הוא סולם גנבים"],
+                [6.30,  9.70, "אני נהנה מלפתח פוטנציאל של מישהו אחר"],
+                [9.71, 10.50, "למה סולם גנבים?"],
+                [10.55, 13.00, "אני לא מעביר את הילד את המכשול"],
+                [13.18, 16.30, "אני עוזר לו שיעבור אותו לבד"],
+                [16.85, 19.20, "תחשוב שאתה מנהל, ויש לך עובד כזה"],
+                [19.25, 20.85, "ואתה כל הזמן גורם לו להתפתח"],
+                [20.90, 22.50, "זה מדהים — אותו דבר עם הורה"]
+              ]
+            </script>
+            סולם גנבים
+          </button>
+          <button class="quotes-tab" data-src="quote-patterns.mp4" role="tab" aria-selected="false">
+            <script type="application/json">
+              [
+                [0.17,  2.45, "בדרך כלל, בן אדם שהוא סבלני — יהיה סבלני"],
+                [2.50,  6.60, "זה לא שבן אדם פתאום קצר רוח יהפוך להיות סבלני"],
+                [6.65,  7.80, "זה לא כל כך הולך"],
+                [7.85, 10.00, "כי גם שינוי הוא דבר נורא נורא קשה"],
+                [10.05, 13.30, "יש לנו תבניות מסוימות שאיתן אנחנו רצים"]
+              ]
+            </script>
+            אנשים לא משתנים
+          </button>
+          <button class="quotes-tab" data-src="quote-empathy.mp4" role="tab" aria-selected="false">
+            <script type="application/json">
+              [
+                [0.00,  1.60, "אני יודע שאני צריך להפעיל"],
+                [1.60,  4.00, "מה שאני מכנה — אמפתיה רציונלית"],
+                [4.10,  9.00, "זאת אומרת — זה לא בא לי טבעי"],
+                [9.70, 10.85, "אני צריך להתאמץ"],
+                [10.90, 13.60, "חייב להיות לפחות אמפתי ברמה מסוימת"],
+                [14.10, 15.60, "אני לא אצטיין בזה"],
+                [15.65, 18.50, "אבל בלי זה — זה יפריע לי לממש"],
+                [18.55, 20.20, "חוזקות אחרות שלי"]
+              ]
+            </script>
+            אמפתיה רציונלית
+          </button>
         </div>
       </div>
     </div>
