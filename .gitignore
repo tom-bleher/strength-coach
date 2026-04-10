@@ -18,6 +18,9 @@ dist-ssr
 # Dev screenshots
 screenshots
 
+# Local transcripts working directory (raw audio + intermediate files, ~430MB)
+transcripts/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
