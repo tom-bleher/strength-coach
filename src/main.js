@@ -28,9 +28,10 @@ document.getElementById('contact-form')?.addEventListener('submit', (e) => {
   if (!video || !captionEl || !screenEl || !tabs.length) return;
   const CAPTION_SWAP_DELAY_MS = 140;
 
+  const BASE = import.meta.env.BASE_URL;
   const clips = [
     {
-      src: '/quote-definition.mp4',
+      src: `${BASE}quote-definition.mp4`,
       captions: [
         [0.5,  4.0,  'גלופ מחפשת תבניות'],
         [4.0,  8.0,  'של רגש, מחשבה, או פעולה — שיש להם היבט פרודוקטיבי'],
@@ -43,7 +44,7 @@ document.getElementById('contact-form')?.addEventListener('submit', (e) => {
       ],
     },
     {
-      src: '/quote-filters.mp4',
+      src: `${BASE}quote-filters.mp4`,
       captions: [
         [0.5,  5.0,  'רוב האנשים חושבים שהפילטר שלהם על העולם'],
         [5.0,  7.5,  'דומה לפילטר של אנשים אחרים'],
@@ -52,7 +53,7 @@ document.getElementById('contact-form')?.addEventListener('submit', (e) => {
       ],
     },
     {
-      src: '/quote-magic.mp4',
+      src: `${BASE}quote-magic.mp4`,
       captions: [
         [0.5,  4.5,  'הקסם הוא כשאנחנו יושבים בצוות'],
         [4.5,  9.0,  'ופתאום אנשים שומעים משהו שהם הרגישו באופן אינטואיטיבי'],
